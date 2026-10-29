@@ -25,11 +25,23 @@ python -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
+## Run the browser tests
+
+Install the development dependencies and the Chromium browser once:
+
+```sh
+npm install
+npx playwright install chromium
+```
+
+Run the end-to-end suite with `npm test`. Playwright opens a local copy of the app and checks the event dashboard, editing and storage, milestone completion, zero budgets, JSON backup import/export, and escaped event names. A GitHub Actions workflow runs the same suite for pushes and pull requests.
+
 ## Project structure
 
 - `index.html` contains the page content and controls.
 - `styles.css` contains the visual styles, responsive layouts, and focus states.
 - `app.js` loads and saves the plan, renders the dashboard, and handles planner actions and local suggestions.
+- `tests/` contains browser tests and the small local server used only by the test runner.
 
 The app has no build step or server dependency. Plans stay in the current browser's local storage. Download a JSON backup to move a plan, then use **Import backup** in the other browser. The planning pal uses rules in `app.js`; it does not call an AI model or send event details over the network.
 

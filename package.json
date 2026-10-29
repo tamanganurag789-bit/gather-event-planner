@@ -1,0 +1,13 @@
+{
+  "name": "gather-event-planner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser tests for the Gather event planner",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui"
+  },
+  "devDependencies": {
+    "@playwright/test": "latest"
+  }
+}
