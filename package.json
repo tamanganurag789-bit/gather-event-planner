@@ -2,10 +2,11 @@
   "name": "gather-event-planner",
   "version": "1.0.0",
   "private": true,
-  "description": "Browser tests for the Gather event planner",
+  "description": "A celebration planner with browser tests and a demo recorder",
   "scripts": {
     "test": "playwright test",
-    "test:ui": "playwright test --ui"
+    "test:ui": "playwright test --ui",
+    "demo:record": "node scripts/record-demo.mjs"
   },
   "devDependencies": {
     "@playwright/test": "latest"
