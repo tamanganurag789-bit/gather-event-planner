@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
   <aside class="rail" aria-label="Main navigation">
@@ -27,12 +27,12 @@
     <header class="topbar">
       <a class="wordmark" href="#home">gather<span>.</span></a>
       <span class="topbar-note"><span class="live-dot"></span> YOUR LITTLE CORNER OF THE INTERNET</span>
-      <button class="quiet-button" id="shareBtn">↗ <span>Share plan</span></button>
+      <button class="quiet-button" id="shareBtn" aria-label="Download a backup of your plan">↓ <span>Download plan</span></button>
     </header>
 
     <section class="welcome">
       <div class="welcome-copy">
-        <span class="eyebrow">THURSDAY, OCTOBER 29 <span class="sparkle">✳</span></span>
+        <span class="eyebrow"><time id="todayDate">TODAY</time> <span class="sparkle">✳</span></span>
         <h1>Make room for<br>the <em>good stuff.</em></h1>
         <p>One lovely place to plan the moments that bring everyone together.</p>
         <button class="primary-button" id="newPlanBtn">＋ &nbsp; Plan a new event</button>
@@ -74,6 +74,6 @@
 
   <dialog id="modal" class="modal"><form method="dialog" class="modal-card" id="modalForm"><button class="modal-close" aria-label="Close">×</button><span class="section-kicker" id="modalKicker">LET’S MAKE A PLAN</span><h2 id="modalTitle">Plan a new event</h2><div id="modalFields"></div><div class="modal-actions"><button class="secondary-button" value="cancel">Maybe later</button><button class="primary-button" id="modalSave" value="default">Save the details</button></div></form></dialog>
   <div class="toast" id="toast" role="status"></div>
-  <script src="app.js"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>

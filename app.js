@@ -41,11 +41,13 @@
   const save = () => { try { localStorage.setItem('gather-plan', JSON.stringify(state)); } catch { toast('Could not save on this device. Check your browser storage settings.'); } };
   const moneyFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
   const dateFormatter = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  const todayFormatter = new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
   const money = (n) => moneyFormatter.format(asAmount(n));
   const fmtDate = (date) => date ? dateFormatter.format(new Date(`${date}T12:00:00`)).toUpperCase() : 'ADD A DATE';
   const iconMap = { 'Venue & catering': '✿', Photographer: '◌', 'Music & DJ': '♫', Flowers: '❀', Rentals: '⌂', 'Cake & dessert': '♧', 'Hair & makeup': '✧', Officiant: '♡' };
 
   function render() {
+    $('#todayDate').textContent = todayFormatter.format(new Date()).toUpperCase();
     $('#eventTitle').textContent = state.title;
     $('.event-type').innerHTML = `<span class="type-icon">♡</span> &nbsp; ${escapeHtml(state.type).toUpperCase()}`;
     $('.event-place').textContent = `⌖  ${state.place}`;
@@ -78,7 +80,18 @@
   $('#timelineBtn').addEventListener('click', () => { document.querySelector('.timeline-panel').scrollIntoView({ behavior: 'smooth' }); toast('Your milestones are all in one place.'); });
   $('#checklistBtn').addEventListener('click', () => { location.hash = 'checklist'; document.querySelector('#checklist').scrollIntoView({ behavior: 'smooth' }); });
   $('#ideasBtn').addEventListener('click', () => { location.hash = 'ideas'; $('#assistantPrompt').focus(); });
-  $('#shareBtn').addEventListener('click', async () => { try { await navigator.clipboard.writeText(location.href); toast('App link copied. Your plan is saved on this device.'); } catch { toast('Your plan is saved on this device.'); } });
+  $('#shareBtn').addEventListener('click', () => {
+    const blob = new Blob([JSON.stringify({ app: 'Gather', version: 1, exportedAt: new Date().toISOString(), plan: state }, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `gather-plan-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.append(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    toast('Plan backup downloaded to your device.');
+  });
   $('#eventMenu').addEventListener('click', () => openModal('A few little details', 'YOUR EVENT, YOUR WAY', `<label>Event name<input name="title" value="${escapeHtml(state.title)}" required></label><label>Location<input name="place" value="${escapeHtml(state.place)}"></label>`, d => { state.title = d.title; state.place = d.place; save(); render(); toast('Details updated.'); return true; }));
   $('#vendorAddBtn').addEventListener('click', () => openModal('Find your people', 'ADD TO THE VENDOR LIST', `<label>Vendor type<select name="name">${Object.keys(iconMap).map(k => `<option>${k}</option>`).join('')}</select></label><label>Vendor or little reminder<input name="detail" placeholder="e.g. Ask about seasonal flowers"></label>`, d => { const existing = state.vendors.find(v => v.name === d.name); if (existing) existing.detail = d.detail || 'A little detail to follow'; else state.vendors.push({ icon: iconMap[d.name], name: d.name, detail: d.detail || 'Find your person', status: 'pending' }); save(); render(); toast(`${d.name} added to your checklist.`); return true; }));
   $('#vendorGrid').addEventListener('click', (e) => { const card = e.target.closest('.vendor-card'); if (!card) return; const v = state.vendors[Number(card.dataset.vendor)]; if (v.status === 'pending') { v.status = 'booked'; v.detail = v.detail.includes('Find') ? 'Booked · you’ve got this' : `Booked · ${v.detail}`; state.done = Math.min(12, state.done + 1); save(); render(); toast(`${v.name} is on board — lovely choice.`); } else openModal('A vendor detail', 'GOOD PEOPLE, GOOD PLANS', `<label>${escapeHtml(v.name)}<input name="detail" value="${escapeHtml(v.detail)}"></label>`, d => { v.detail = d.detail; save(); render(); toast('Vendor details saved.'); return true; }); });

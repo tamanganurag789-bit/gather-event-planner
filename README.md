@@ -10,6 +10,7 @@
 - Mark milestones complete and see the completed-task count update.
 - Ask the planning pal for event-aware menu, guest-experience, budget, and styling ideas for weddings, birthdays, or community gatherings.
 - Keep the plan on your device between visits (browser local storage).
+- Download a JSON backup of the current plan for safekeeping.
 - Use the app on desktop or mobile, with keyboard-accessible controls and visible focus states.
 - Start a fresh plan with a practical starter timeline and vendor checklist.
 
