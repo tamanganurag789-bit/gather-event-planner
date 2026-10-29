@@ -7,9 +7,11 @@
 - Start a celebration plan and edit its name, type, date, location, and budget.
 - Keep an eye on event spending and see what remains at a glance.
 - Add planning milestones and update the vendor checklist.
-- Ask the planning pal for tailored menu, guest-experience, budget, and styling ideas.
+- Mark milestones complete and see the completed-task count update.
+- Ask the planning pal for event-aware menu, guest-experience, budget, and styling ideas for weddings, birthdays, or community gatherings.
 - Keep the plan on your device between visits (browser local storage).
 - Use the app on desktop or mobile, with keyboard-accessible controls and visible focus states.
+- Start a fresh plan with a practical starter timeline and vendor checklist.
 
 ## Run it locally
 
@@ -27,7 +29,9 @@ The app has no build step and can be hosted by GitHub Pages, Netlify, or any sta
 
 ## About the planning pal
 
-The assistant provides event-aware suggestions locally in the browser and does not send your plan to a service. Connect a language model API through a small server-side endpoint if you want open-ended generative responses; keep any API key on the server.
+The planning pal uses local, rule-based suggestions in the browser and does not send your plan to a service. It is not connected to a GenAI service. Its recommendations use your event type, budget, date, and location where relevant. Connect a language model API through a small server-side endpoint if you want open-ended generative responses; keep any API key on the server.
+
+Saved plans are checked and normalized when loaded. If browser storage is unavailable, the current session remains usable but changes may not persist. Avoid entering sensitive personal information into event details.
 
 ## Demo walkthrough (under 4 minutes)
 
