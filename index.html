@@ -1,79 +1,293 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f7f4">
-  <meta name="description" content="Gather is your calm, clever companion for planning weddings, birthdays, and the moments that bring everyone together.">
-  <title>Gather — make room for the good stuff</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3">
-</head>
-<body>
-  <aside class="rail" aria-label="Main navigation">
-    <a class="brand-mark" href="#home" aria-label="Gather home">g<span>.</span></a>
-    <nav class="rail-nav">
-      <a class="rail-link active" href="#home" aria-label="Overview" title="Overview"><span>⌂</span></a>
-      <a class="rail-link" href="#budget" aria-label="Budget" title="Budget"><span>◫</span></a>
-      <a class="rail-link" href="#checklist" aria-label="Checklist" title="Checklist"><span>☷</span></a>
-      <a class="rail-link" href="#ideas" aria-label="Ideas" title="Ideas"><span>✳</span></a>
-    </nav>
-    <button class="avatar" aria-label="Your profile">J</button>
-  </aside>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7f4" />
+    <meta
+      name="description"
+      content="Gather is your calm, clever companion for planning weddings, birthdays, and the moments that bring everyone together."
+    />
+    <title>Gather — make room for the good stuff</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=3" />
+  </head>
+  <body>
+    <aside class="rail" aria-label="Main navigation">
+      <a class="brand-mark" href="#home" aria-label="Gather home"
+        >g<span>.</span></a
+      >
+      <nav class="rail-nav">
+        <a
+          class="rail-link active"
+          href="#home"
+          aria-label="Overview"
+          title="Overview"
+          ><span>⌂</span></a
+        >
+        <a class="rail-link" href="#budget" aria-label="Budget" title="Budget"
+          ><span>◫</span></a
+        >
+        <a
+          class="rail-link"
+          href="#checklist"
+          aria-label="Checklist"
+          title="Checklist"
+          ><span>☷</span></a
+        >
+        <a class="rail-link" href="#ideas" aria-label="Ideas" title="Ideas"
+          ><span>✳</span></a
+        >
+      </nav>
+      <button class="avatar" aria-label="Your profile">J</button>
+    </aside>
 
-  <main id="home" class="app-shell">
-    <header class="topbar">
-      <a class="wordmark" href="#home">gather<span>.</span></a>
-      <span class="topbar-note"><span class="live-dot"></span> YOUR LITTLE CORNER OF THE INTERNET</span>
-      <div class="backup-actions"><label class="quiet-button import-button" for="importPlanInput" aria-label="Import a plan backup">↑ <span>Import backup</span></label><input id="importPlanInput" class="sr-only" type="file" accept="application/json,.json"><button class="quiet-button" id="shareBtn" aria-label="Download a backup of your plan">↓ <span>Download plan</span></button></div>
-    </header>
+    <main id="home" class="app-shell">
+      <header class="topbar">
+        <a class="wordmark" href="#home">gather<span>.</span></a>
+        <span class="topbar-note"
+          ><span class="live-dot"></span> YOUR LITTLE CORNER OF THE
+          INTERNET</span
+        >
+        <div class="backup-actions">
+          <label
+            class="quiet-button import-button"
+            for="importPlanInput"
+            aria-label="Import a plan backup"
+            >↑ <span>Import backup</span></label
+          ><input
+            id="importPlanInput"
+            class="sr-only"
+            type="file"
+            accept="application/json,.json"
+          /><button
+            class="quiet-button"
+            id="shareBtn"
+            aria-label="Download a backup of your plan"
+          >
+            ↓ <span>Download plan</span>
+          </button>
+        </div>
+      </header>
 
-    <section class="welcome">
-      <div class="welcome-copy">
-        <span class="eyebrow"><time id="todayDate">TODAY</time> <span class="sparkle">✳</span></span>
-        <h1>Make room for<br>the <em>good stuff.</em></h1>
-        <p>One lovely place to plan the moments that bring everyone together.</p>
-        <button class="primary-button" id="newPlanBtn">＋ &nbsp; Plan a new event</button>
-      </div>
-      <div class="hero-art" role="img" aria-label="A sunny table set for a celebration">
-        <div class="hero-sun"></div><span class="hero-label">the best bits<br>are yet to come</span>
-        <div class="hero-vase"><i></i><b></b></div>
-      </div>
-    </section>
+      <section class="welcome">
+        <div class="welcome-copy">
+          <span class="eyebrow"
+            ><time id="todayDate">TODAY</time>
+            <span class="sparkle">✳</span></span
+          >
+          <h1>Make room for<br />the <em>good stuff.</em></h1>
+          <p>
+            One lovely place to plan the moments that bring everyone together.
+          </p>
+          <button class="primary-button" id="newPlanBtn">
+            ＋ &nbsp; Plan a new event
+          </button>
+        </div>
+        <div
+          class="hero-art"
+          role="img"
+          aria-label="A sunny table set for a celebration"
+        >
+          <div class="hero-sun"></div>
+          <span class="hero-label">the best bits<br />are yet to come</span>
+          <div class="hero-vase"><i></i><b></b></div>
+        </div>
+      </section>
 
-    <section class="event-heading">
-      <div><span class="section-kicker">ON THE HORIZON</span><h2>Your next big thing</h2></div>
-      <button class="text-button" id="editEventBtn">Edit details <span>↗</span></button>
-    </section>
+      <section class="event-heading">
+        <div>
+          <span class="section-kicker">ON THE HORIZON</span>
+          <h2>Your next big thing</h2>
+        </div>
+        <button class="text-button" id="editEventBtn">
+          Edit details <span>↗</span>
+        </button>
+      </section>
 
-    <section class="event-card">
-      <div class="event-cover"><span class="cover-tag">A DAY TO REMEMBER</span><span class="cover-flower">✿</span></div>
-      <div class="event-body">
-        <div class="event-title-row"><div><span class="event-type"><span class="type-icon">♡</span> &nbsp; WEDDING</span><h3 id="eventTitle">Maya &amp; Arjun’s Wedding</h3><p class="event-place">⌖ &nbsp; The Fig House, Los Angeles</p></div><button class="icon-button" id="eventMenu" aria-label="Event menu">···</button></div>
-        <div class="event-details"><div class="date-block"><span>THE BIG DAY</span><strong id="eventDate">JUN 12, 2027</strong></div><div class="countdown"><strong id="countdownDays">226</strong><span>days of<br>happy anticipation</span></div><div class="guests"><span class="avatar-stack"><b>M</b><b>A</b><b>+</b></span><span><strong id="guestCount">120</strong><small>expected guests</small></span></div></div>
-      </div>
-    </section>
+      <section class="event-card">
+        <div class="event-cover">
+          <span class="cover-tag">A DAY TO REMEMBER</span
+          ><span class="cover-flower">✿</span>
+        </div>
+        <div class="event-body">
+          <div class="event-title-row">
+            <div>
+              <span class="event-type"
+                ><span class="type-icon">♡</span> &nbsp; WEDDING</span
+              >
+              <h3 id="eventTitle">Maya &amp; Arjun’s Wedding</h3>
+              <p class="event-place">⌖ &nbsp; The Fig House, Los Angeles</p>
+            </div>
+            <button class="icon-button" id="eventMenu" aria-label="Event menu">
+              ···
+            </button>
+          </div>
+          <div class="event-details">
+            <div class="date-block">
+              <span>THE BIG DAY</span
+              ><strong id="eventDate">JUN 12, 2027</strong>
+            </div>
+            <div class="countdown">
+              <strong id="countdownDays">226</strong
+              ><span>days of<br />happy anticipation</span>
+            </div>
+            <div class="guests">
+              <span class="avatar-stack"><b>M</b><b>A</b><b>+</b></span
+              ><span
+                ><strong id="guestCount">120</strong
+                ><small>expected guests</small></span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <section class="stats-grid" id="budget">
-      <article class="stat-card budget-card"><div class="stat-top"><span class="section-kicker">YOUR BUDGET</span><button class="dots" aria-label="Budget options">···</button></div><div class="budget-amount"><strong id="spentAmount">$12,450</strong><span>of <b id="totalAmount">$25,000</b></span></div><div class="progress-track"><div class="progress-value" id="budgetProgress"></div></div><div class="stat-foot"><span><i class="legend-dot"></i> $12,450 spent</span><span><i class="legend-dot muted-dot"></i> $12,550 left</span></div><button class="card-action" id="budgetBtn">See budget breakdown <span>↗</span></button></article>
-      <article class="stat-card task-card"><div class="stat-top"><span class="section-kicker">THE TO-DO LIST</span><span class="tiny-icon">✓</span></div><div class="task-count"><strong id="taskCount">8</strong><span>little things<br>done so far</span></div><div class="mini-checks"><span>✓</span><span>✓</span><span>✓</span><span>✓</span><span>✓</span><span>✓</span><span>✓</span><span>✓</span><span>·</span><span>·</span><span>·</span><span>·</span></div><button class="card-action" id="checklistBtn">See your checklist <span>↗</span></button></article>
-      <article class="stat-card vibe-card"><div class="stat-top"><span class="section-kicker">THE VIBE</span><span class="vibe-spark">✳</span></div><div class="vibe-copy"><strong>Golden hour<br>garden party</strong><span>Romantic · Warm · Unfussy</span></div><div class="swatches"><i></i><i></i><i></i><i></i><i></i></div><button class="card-action" id="ideasBtn">Explore your ideas <span>↗</span></button></article>
-    </section>
+      <section class="stats-grid" id="budget">
+        <article class="stat-card budget-card">
+          <div class="stat-top">
+            <span class="section-kicker">YOUR BUDGET</span
+            ><button class="dots" aria-label="Budget options">···</button>
+          </div>
+          <div class="budget-amount">
+            <strong id="spentAmount">$12,450</strong
+            ><span>of <b id="totalAmount">$25,000</b></span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-value" id="budgetProgress"></div>
+          </div>
+          <div class="stat-foot">
+            <span><i class="legend-dot"></i> $12,450 spent</span
+            ><span><i class="legend-dot muted-dot"></i> $12,550 left</span>
+          </div>
+          <button class="card-action" id="budgetBtn">
+            See budget breakdown <span>↗</span>
+          </button>
+        </article>
+        <article class="stat-card task-card">
+          <div class="stat-top">
+            <span class="section-kicker">THE TO-DO LIST</span
+            ><span class="tiny-icon">✓</span>
+          </div>
+          <div class="task-count">
+            <strong id="taskCount">8</strong
+            ><span>little things<br />done so far</span>
+          </div>
+          <div class="mini-checks">
+            <span>✓</span><span>✓</span><span>✓</span><span>✓</span
+            ><span>✓</span><span>✓</span><span>✓</span><span>✓</span
+            ><span>·</span><span>·</span><span>·</span><span>·</span>
+          </div>
+          <button class="card-action" id="checklistBtn">
+            See your checklist <span>↗</span>
+          </button>
+        </article>
+        <article class="stat-card vibe-card">
+          <div class="stat-top">
+            <span class="section-kicker">THE VIBE</span
+            ><span class="vibe-spark">✳</span>
+          </div>
+          <div class="vibe-copy">
+            <strong>Golden hour<br />garden party</strong
+            ><span>Romantic · Warm · Unfussy</span>
+          </div>
+          <div class="swatches"><i></i><i></i><i></i><i></i><i></i></div>
+          <button class="card-action" id="ideasBtn">
+            Explore your ideas <span>↗</span>
+          </button>
+        </article>
+      </section>
 
-    <section class="lower-grid">
-      <article class="panel timeline-panel"><div class="panel-head"><div><span class="section-kicker">ONE THING AT A TIME</span><h2>The timeline</h2></div><button class="text-button" id="timelineBtn">Full timeline <span>↗</span></button></div><div class="timeline-list" id="timelineList"></div><button class="add-row" id="addTimelineBtn">＋ &nbsp; Add a milestone</button></article>
-      <article class="panel assistant-panel" id="ideas"><div class="assistant-header"><span class="assistant-star">✳</span><div><span class="section-kicker">A LITTLE HELP WITH PLANNING</span><h2>Your planning pal</h2></div><span class="ai-pill">PERSONALIZED IDEAS</span></div><p>Tell me what you’re dreaming up. I’ll help turn the little details into a big-picture plan.</p><div class="suggestion-chips"><button>Budget-friendly ideas</button><button>Guest experience</button></div><form id="assistantForm" class="assistant-input"><label class="sr-only" for="assistantPrompt">Ask your planning assistant</label><input id="assistantPrompt" placeholder="e.g. What should we serve?" autocomplete="off"><button aria-label="Send message">↑</button></form><span class="ai-note">A thoughtful starting point, made just for your day.</span><div class="assistant-response" id="assistantResponse" aria-live="polite"></div></article>
-    </section>
+      <section class="lower-grid">
+        <article class="panel timeline-panel">
+          <div class="panel-head">
+            <div>
+              <span class="section-kicker">ONE THING AT A TIME</span>
+              <h2>The timeline</h2>
+            </div>
+            <button class="text-button" id="timelineBtn">
+              Full timeline <span>↗</span>
+            </button>
+          </div>
+          <div class="timeline-list" id="timelineList"></div>
+          <button class="add-row" id="addTimelineBtn">
+            ＋ &nbsp; Add a milestone
+          </button>
+        </article>
+        <article class="panel assistant-panel" id="ideas">
+          <div class="assistant-header">
+            <span class="assistant-star">✳</span>
+            <div>
+              <span class="section-kicker">A LITTLE HELP WITH PLANNING</span>
+              <h2>Your planning pal</h2>
+            </div>
+            <span class="ai-pill">PERSONALIZED IDEAS</span>
+          </div>
+          <p>
+            Tell me what you’re dreaming up. I’ll help turn the little details
+            into a big-picture plan.
+          </p>
+          <div class="suggestion-chips">
+            <button>Budget-friendly ideas</button
+            ><button>Guest experience</button>
+          </div>
+          <form id="assistantForm" class="assistant-input">
+            <label class="sr-only" for="assistantPrompt"
+              >Ask your planning assistant</label
+            ><input
+              id="assistantPrompt"
+              placeholder="e.g. What should we serve?"
+              autocomplete="off"
+            /><button aria-label="Send message">↑</button>
+          </form>
+          <span class="ai-note"
+            >A thoughtful starting point, made just for your day.</span
+          >
+          <div
+            class="assistant-response"
+            id="assistantResponse"
+            aria-live="polite"
+          ></div>
+        </article>
+      </section>
 
-    <section class="vendor-section" id="checklist"><div class="panel-head"><div><span class="section-kicker">GOOD PEOPLE, GOOD PLANS</span><h2>Vendor checklist</h2></div><button class="text-button" id="vendorAddBtn">＋ Add a vendor</button></div><div id="vendorGrid" class="vendor-grid"></div></section>
+      <section class="vendor-section" id="checklist">
+        <div class="panel-head">
+          <div>
+            <span class="section-kicker">GOOD PEOPLE, GOOD PLANS</span>
+            <h2>Vendor checklist</h2>
+          </div>
+          <button class="text-button" id="vendorAddBtn">＋ Add a vendor</button>
+        </div>
+        <div id="vendorGrid" class="vendor-grid"></div>
+      </section>
 
-    <footer><span>Made with a little more <b>♡</b> by Gather</span><span>GOOD THINGS TAKE A LITTLE PLANNING.</span></footer>
-  </main>
+      <footer>
+        <span>Made with a little more <b>♡</b> by Gather</span
+        ><span>GOOD THINGS TAKE A LITTLE PLANNING.</span>
+      </footer>
+    </main>
 
-  <dialog id="modal" class="modal"><form method="dialog" class="modal-card" id="modalForm"><button class="modal-close" aria-label="Close">×</button><span class="section-kicker" id="modalKicker">LET’S MAKE A PLAN</span><h2 id="modalTitle">Plan a new event</h2><div id="modalFields"></div><div class="modal-actions"><button class="secondary-button" value="cancel">Maybe later</button><button class="primary-button" id="modalSave" value="default">Save the details</button></div></form></dialog>
-  <div class="toast" id="toast" role="status"></div>
-  <script src="app.js?v=3"></script>
-</body>
+    <dialog id="modal" class="modal">
+      <form method="dialog" class="modal-card" id="modalForm">
+        <button class="modal-close" aria-label="Close">×</button
+        ><span class="section-kicker" id="modalKicker">LET’S MAKE A PLAN</span>
+        <h2 id="modalTitle">Plan a new event</h2>
+        <div id="modalFields"></div>
+        <div class="modal-actions">
+          <button class="secondary-button" value="cancel">Maybe later</button
+          ><button class="primary-button" id="modalSave" value="default">
+            Save the details
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js?v=3"></script>
+  </body>
 </html>

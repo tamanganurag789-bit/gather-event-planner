@@ -25,6 +25,14 @@ python -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
+## Project structure
+
+- `index.html` contains the page content and controls.
+- `styles.css` contains the visual styles, responsive layouts, and focus states.
+- `app.js` loads and saves the plan, renders the dashboard, and handles planner actions and local suggestions.
+
+The app has no build step or server dependency. Plans stay in the current browser's local storage. Download a JSON backup to move a plan, then use **Import backup** in the other browser. The planning pal uses rules in `app.js`; it does not call an AI model or send event details over the network.
+
 ## Publish it
 
 The app has no build step and can be hosted by GitHub Pages, Netlify, or any static host. Push this folder to a public GitHub repository (the source is comfortably under 10 MB) and enable Pages to get a public URL.
