@@ -4,13 +4,14 @@
 
 ## What you can do
 
-- Start a celebration plan and edit its name, type, date, location, and budget.
+- Start a celebration plan and edit its name, type, date, location, expected guest count, and budget.
 - Keep an eye on event spending and see what remains at a glance.
 - Add planning milestones and update the vendor checklist.
 - Mark milestones complete and see the completed-task count update.
 - Ask the planning pal for event-aware menu, guest-experience, budget, and styling ideas for weddings, birthdays, or community gatherings.
 - Keep the plan on your device between visits (browser local storage).
 - Download a JSON backup of the current plan for safekeeping.
+- Restore a plan from a Gather JSON backup, so plans can move between browsers or devices.
 - Use the app on desktop or mobile, with keyboard-accessible controls and visible focus states.
 - Start a fresh plan with a practical starter timeline and vendor checklist.
 

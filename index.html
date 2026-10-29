@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
   <aside class="rail" aria-label="Main navigation">
@@ -27,7 +27,7 @@
     <header class="topbar">
       <a class="wordmark" href="#home">gather<span>.</span></a>
       <span class="topbar-note"><span class="live-dot"></span> YOUR LITTLE CORNER OF THE INTERNET</span>
-      <button class="quiet-button" id="shareBtn" aria-label="Download a backup of your plan">↓ <span>Download plan</span></button>
+      <div class="backup-actions"><label class="quiet-button import-button" for="importPlanInput" aria-label="Import a plan backup">↑ <span>Import backup</span></label><input id="importPlanInput" class="sr-only" type="file" accept="application/json,.json"><button class="quiet-button" id="shareBtn" aria-label="Download a backup of your plan">↓ <span>Download plan</span></button></div>
     </header>
 
     <section class="welcome">
@@ -52,7 +52,7 @@
       <div class="event-cover"><span class="cover-tag">A DAY TO REMEMBER</span><span class="cover-flower">✿</span></div>
       <div class="event-body">
         <div class="event-title-row"><div><span class="event-type"><span class="type-icon">♡</span> &nbsp; WEDDING</span><h3 id="eventTitle">Maya &amp; Arjun’s Wedding</h3><p class="event-place">⌖ &nbsp; The Fig House, Los Angeles</p></div><button class="icon-button" id="eventMenu" aria-label="Event menu">···</button></div>
-        <div class="event-details"><div class="date-block"><span>THE BIG DAY</span><strong id="eventDate">JUN 12, 2027</strong></div><div class="countdown"><strong id="countdownDays">226</strong><span>days of<br>happy anticipation</span></div><div class="guests"><span class="avatar-stack"><b>M</b><b>A</b><b>+</b></span><span><strong>120</strong><small>lovely humans</small></span></div></div>
+        <div class="event-details"><div class="date-block"><span>THE BIG DAY</span><strong id="eventDate">JUN 12, 2027</strong></div><div class="countdown"><strong id="countdownDays">226</strong><span>days of<br>happy anticipation</span></div><div class="guests"><span class="avatar-stack"><b>M</b><b>A</b><b>+</b></span><span><strong id="guestCount">120</strong><small>expected guests</small></span></div></div>
       </div>
     </section>
 
@@ -74,6 +74,6 @@
 
   <dialog id="modal" class="modal"><form method="dialog" class="modal-card" id="modalForm"><button class="modal-close" aria-label="Close">×</button><span class="section-kicker" id="modalKicker">LET’S MAKE A PLAN</span><h2 id="modalTitle">Plan a new event</h2><div id="modalFields"></div><div class="modal-actions"><button class="secondary-button" value="cancel">Maybe later</button><button class="primary-button" id="modalSave" value="default">Save the details</button></div></form></dialog>
   <div class="toast" id="toast" role="status"></div>
-  <script src="app.js?v=2"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
